@@ -7,6 +7,9 @@ check_root
 
 log_title "Step 5: Final Setup (User, Services, Display)"
 
+# Make mountpoints before attempting to mount
+mkdir -p rootfs/dev rootfs/proc rootfs/sys
+
 # Mount rootfs inside chroot
 log_step "Entering chroot..."
 mount --bind /dev rootfs/dev
